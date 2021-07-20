@@ -1,0 +1,33 @@
+<h1>My Cart</h1>
+<hr>
+
+<table id="users">
+
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col}}
+    </th>
+  </tr>
+  <tr *ngFor="let u of listCart">
+    <td *ngFor="let col of index">
+      {{u[col]}}
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border : 0px"></td>
+    <td style="border : 0px"></td>
+    <td style="border : 0px"></td>
+    <td style="border : 0px">amount</td>
+    <td style="border : 0px"> {{amount}}</td>
+  </tr>
+
+</table>
+<button class="btn btn-success"  (click)="pay(amount)"> pay </button>
+<button class="btn btn-success" (click)="remove()"> delete cart </button>
+
+<button class="btn btn-success" routerLink="/products">Back</button>
+
+<!--<div *ngFor="let item of items" >{{item}}</div>-->
+
+<!--<a [href]="url" [textContent]="url"> </a> -->
