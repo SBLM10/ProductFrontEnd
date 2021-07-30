@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CartItem} from '../model/cartItem';
-import {CartService} from '../service/cart.service';
-import {MatTableDataSource} from '@angular/material/table';
+import {CartItem} from '../models/cartItem';
+import {CartService} from '../services/cart.service';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { ArrayDataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-my-cart',
@@ -12,6 +9,7 @@ import { ArrayDataSource } from '@angular/cdk/collections';
   styleUrls: ['./my-cart.component.css']
 })
 export class MyCartComponent implements OnInit {
+
   items = [] ;
   json;
   n: number;
@@ -75,5 +73,4 @@ export class MyCartComponent implements OnInit {
 
   }
   
-
 }

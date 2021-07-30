@@ -1,7 +1,7 @@
 h1
 {
   text-align: center;
-  color: #4CAF50;
+  color: darkblue;
 }
 
 
@@ -24,6 +24,11 @@ h1
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: darkblue;
   color: white;
+}
+
+button{
+  margin: 13px 12px 12px 10px;
+
 }

@@ -19,7 +19,7 @@ export class SuccessPaymentComponent implements OnInit {
       confirmButtonText: 'ok',
     }).then((result) => {
       if (result.value){
-        this.router.navigate(["/products"])
+        this.router.navigate(["/home"])
       }
     })
   }

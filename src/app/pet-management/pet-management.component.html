@@ -1,0 +1,24 @@
+<h1>PRODUCT LIST</h1>
+<router-outlet></router-outlet>
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div *ngFor="let p of listProduct">
+    <div class="col">
+      <div class="card">
+        <img src="../../assets/images/{{p.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{p.title}}</h5>
+          <p class="card-text">Price: {{p.price}} DT</p>
+          <input type="number" #box (keyup)="getVal(box.value)" placeholder="Quantity (press ENTER)">
+          
+          <button mat-raised-button color="primary" (click)="addToCart(p)">Add To Cart</button>
+          <button mat-raised-button color="primary" routerLink="/management/{{p.id}}/{{p.title}}/{{p.image}}/{{p.price}}">Update</button>
+          <button mat-raised-button color="primary" (click)="delete(p.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button mat-raised-button color="primary" routerLink="/create-product">Add Products</button>
+<button mat-raised-button color="primary" routerLink="/my-Cart">My Cart</button>

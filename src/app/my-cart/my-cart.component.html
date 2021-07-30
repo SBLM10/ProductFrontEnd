@@ -23,11 +23,9 @@
   </tr>
 
 </table>
-<button class="btn btn-success"  (click)="pay(amount)"> pay </button>
-<button class="btn btn-success" (click)="remove()"> delete cart </button>
+<br>
+<button mat-raised-button color="primary" (click)="remove()"> Delete Cart </button>
+<button mat-raised-button color="primary"  (click)="pay(amount)"> Pay </button>
+<button mat-raised-button color="primary" routerLink="/management">Back</button>
+<br><br>
 
-<button class="btn btn-success" routerLink="/products">Back</button>
-
-<!--<div *ngFor="let item of items" >{{item}}</div>-->
-
-<!--<a [href]="url" [textContent]="url"> </a> -->

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-2">
+    <div  *ngFor="let item of users">
+      <div *ngIf="item.id != UserId" class="card row" style="height: 50px; padding-left: 3%" >
+        <p style="float: left;width:90%; margin-top: auto">{{ item.username }}</p>
+        <button class="btn btn-success" style="float: right;height: 80%;width: 10%;margin-top: auto;margin-bottom: auto;" (click)="ChargerDiscussion(item)">></button>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="card">
+      <div class="card-header">
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" >
+          <div class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+            <span class="text-dark" style="font-size: 25px">{{ username }}</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row scrollarea" style="height: 300px; overflow:scroll">
+            <div  *ngFor="let item of messages" class="col-12" style="margin-top: 3%">
+              <div [ngClass]="{'speech-bubble-right': '/api/users/' + this.UserId === item.User, 'speech-bubble' : '/api/users/' + this.UserId !==  item.User }"
+              >
+                <div class="col-12" style="margin-bottom: 40px;float: left;">
+                  <div class="col-md-7" style="float: left;">
+                    <div class="info">
+                      <span class="text-dark">{{ username }}</span><br>
+                    </div>
+                  </div>
+                  <div class="col-md-5" style="float: left;">
+                    <span class="d-block font-size-16 text-dark">{{ item.date| date: 'dd/MM/yyyy' }}</span>
+                  </div>
+                </div>
+                <div class="col-12" style="float: left;">
+                  {{ item.text }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="form-group row">
+            <div class="col-md-12"  *ngIf="UserDiscussion">
+              <input type="text" class="form-control" [(ngModel)]="message" placeholder="message">
+              <button class="btn btn-info col-2" style="float: right;margin-top: 1%" (click)="submit()">Envoyer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
